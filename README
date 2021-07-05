@@ -1,0 +1,44 @@
+README
+In the Code folder:
+There are 4 python files.
+The code uses library provided with the file name: gbssl.py
+Dependencies: scikit, networkX, numpy, stellargraph,Numpy >= 1.3, SciPy >= 0.7
+
+###Prerequisites##
+RESCAL: https://github.com/mnick/rescal.py
+
+#####################################################################
+
+(a) CKM_Physicans.py
+
+(1) By default this code uses Rescal Tensor Embedding with Boundary Heat Diffusion. 
+(2) To change other label propagation algorithm for example heat diffusion change this line in the code:
+	Disable
+	#score,label_pred = get_bhd_score(graph,train_nodes,labels)
+
+	Enable
+	score,label_pred = get_heat_score(graph,train_nodes,labels)
+
+(3) To change the embedding for example Rescal to Node2vec change this line in the code:
+	Disable
+	#graph_embeddings = get_tensor_embeddings()
+
+	Enable
+	graph_embeddings = get_node2vec_embeddings()
+
+
+
+(b) Leskovec_NG_Collab.py
+ Same as CKM_Physicans.py
+
+(c) multi_layer_benchmark.py
+(1) By default this code uses Rescal Tensor Embedding with Boundary Heat Diffusion for a ACM data.
+(2) To change the data change this line 
+	 data_src = "ACM" to 
+	 data_src = "DBLP" or
+	 data_src = "IMDB"
+
+For embeddings and label propagation it is same as "CKM_physicians.py" file
+
+
+
